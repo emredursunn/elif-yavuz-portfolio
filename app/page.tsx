@@ -11,6 +11,13 @@ const fadeInUp = {
   transition: { duration: 0.5, ease: "easeOut" as const }
 };
 
+// Stagger child'lar için - viewport YOK, sadece parent tetiklesin (çift animasyonu önler)
+const staggerChild = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: "easeOut" as const }
+};
+
 const staggerContainer = {
   initial: {},
   whileInView: {
@@ -127,7 +134,7 @@ export default function Home() {
             {/* MR DIY Turkey - Logistics Specialist */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -163,7 +170,7 @@ export default function Home() {
             {/* MR DIY Turkey - Assistant Specialist */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -199,7 +206,7 @@ export default function Home() {
             {/* SIO Automotive - Management Intern */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -227,7 +234,7 @@ export default function Home() {
             {/* SIO Automotive - Production Intern */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -255,7 +262,7 @@ export default function Home() {
             {/* HASIR Group */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -283,7 +290,7 @@ export default function Home() {
             {/* Titanic Hotels */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -311,7 +318,7 @@ export default function Home() {
             {/* PNL LED Lighting Systems */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -367,25 +374,25 @@ export default function Home() {
             >
               <motion.div 
                 className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
-                variants={fadeInUp}
+                variants={staggerChild}
               >
                 Microsoft Excel
               </motion.div>
               <motion.div 
                 className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
-                variants={fadeInUp}
+                variants={staggerChild}
               >
                 Process Analysis
               </motion.div>
               <motion.div 
                 className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
-                variants={fadeInUp}
+                variants={staggerChild}
               >
                 Operational Planning
               </motion.div>
               <motion.div 
                 className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
-                variants={fadeInUp}
+                variants={staggerChild}
               >
                 Reporting & Data Tracking
               </motion.div>
@@ -412,7 +419,7 @@ export default function Home() {
           >
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <h3 className="text-2xl font-bold text-[#2d2d2d] mb-2">BSc in Industrial Engineering</h3>
               <p className="text-[#d4a574] font-semibold text-lg mb-4">Süleyman Demirel University</p>
@@ -422,7 +429,7 @@ export default function Home() {
             </motion.div>
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInUp}
+              variants={staggerChild}
             >
               <h3 className="text-2xl font-bold text-[#2d2d2d] mb-2">Erasmus Internships</h3>
               <p className="text-[#d4a574] font-semibold text-lg mb-4">Berlin, Germany</p>
@@ -468,7 +475,7 @@ export default function Home() {
             >
               <motion.div 
                 className="hover:translate-x-2 transition-transform duration-300"
-                variants={fadeInUp}
+                variants={staggerChild}
               >
                 <h3 className="text-lg font-semibold text-[#d4a574] mb-2">Email</h3>
                 <a href="mailto:elifyavuz5x@gmail.com" className="text-[#2d2d2d] text-xl hover:text-[#d4a574] transition-colors">
@@ -477,7 +484,7 @@ export default function Home() {
               </motion.div>
               <motion.div 
                 className="hover:translate-x-2 transition-transform duration-300"
-                variants={fadeInUp}
+                variants={staggerChild}
               >
                 <h3 className="text-lg font-semibold text-[#d4a574] mb-2">LinkedIn</h3>
                 <a 
