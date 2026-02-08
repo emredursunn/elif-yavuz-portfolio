@@ -170,7 +170,7 @@ export default function Home() {
                   <span>Preparing operational reports and analyses</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* MR DIY Turkey - Assistant Specialist */}
             <motion.div 
