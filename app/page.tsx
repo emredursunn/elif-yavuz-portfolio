@@ -14,19 +14,18 @@ const fadeInUp = {
 // Stagger child'lar için - viewport YOK, sadece parent tetiklesin (çift animasyonu önler)
 const staggerChild = {
   initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
+  animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5, ease: "easeOut" as const }
 };
 
 const staggerContainer = {
   initial: {},
-  whileInView: {
+  animate: {
     transition: {
       staggerChildren: 0.08,
       delayChildren: 0.05
     }
-  },
-  viewport: { once: true, margin: "-50px" }
+  }
 };
 
 export default function Home() {
@@ -105,8 +104,10 @@ export default function Home() {
           </motion.h2>
           <motion.div 
             className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500"
-            {...fadeInUp}
-            transition={{ duration: 0.5, delay: 0.08 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.08 }}
           >
             <p className="text-lg text-[#5a5a5a] leading-relaxed">
               I am a Logistics Specialist with hands-on experience in operational logistics, process optimization, and cost-conscious workflow management. Throughout my career, I have worked closely with cross-functional teams to improve operational efficiency, streamline logistics processes, and support data-driven decision-making. With a strong background in logistics operations and supply chain analysis, I enjoy transforming complex workflows into clear, efficient, and sustainable systems.
@@ -128,7 +129,7 @@ export default function Home() {
             className="space-y-8"
             variants={staggerContainer}
             initial="initial"
-            whileInView="whileInView"
+            whileInView="animate"
             viewport={{ once: true, margin: "-50px" }}
           >
             {/* MR DIY Turkey - Logistics Specialist */}
@@ -361,15 +362,17 @@ export default function Home() {
           </motion.h2>
           <motion.div 
             className="bg-[#faf8f6] rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
-            {...fadeInUp}
-            transition={{ duration: 0.5, delay: 0.08 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.08 }}
           >
             <h3 className="text-2xl font-bold text-[#d4a574] mb-6 text-center">Technical Skills</h3>
             <motion.div 
               className="grid sm:grid-cols-2 gap-4"
               variants={staggerContainer}
               initial="initial"
-              whileInView="whileInView"
+              whileInView="animate"
               viewport={{ once: true, margin: "-50px" }}
             >
               <motion.div 
@@ -414,7 +417,7 @@ export default function Home() {
             className="space-y-8"
             variants={staggerContainer}
             initial="initial"
-            whileInView="whileInView"
+            whileInView="animate"
             viewport={{ once: true, margin: "-50px" }}
           >
             <motion.div 
@@ -463,14 +466,16 @@ export default function Home() {
           </motion.h2>
           <motion.div 
             className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500"
-            {...fadeInUp}
-            transition={{ duration: 0.5, delay: 0.08 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.08 }}
           >
             <motion.div 
               className="space-y-6"
               variants={staggerContainer}
               initial="initial"
-              whileInView="whileInView"
+              whileInView="animate"
               viewport={{ once: true, margin: "-50px" }}
             >
               <motion.div 
