@@ -6,13 +6,21 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-6xl w-full mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-center md:text-left">
+          <div className="space-y-6 text-center md:text-left animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl font-bold text-[#2d2d2d] leading-tight">
               Elif Yavuz
             </h1>
-            <h2 className="text-xl md:text-2xl text-[#d4a574] font-medium">
-              Logistics Specialist | Operations & Process Optimization
-            </h2>
+            <div className="space-y-2">
+              <h2 className="text-xl md:text-2xl text-[#d4a574] font-medium">
+                Logistics Specialist | Operations & Process Optimization
+              </h2>
+              <p className="text-lg text-[#7a7a7a] font-medium">
+                Industrial Engineer
+              </p>
+              <p className="text-base text-[#9a9a9a]">
+                Born: 15 February 2001
+              </p>
+            </div>
             <p className="text-lg text-[#5a5a5a] max-w-xl">
               Optimizing logistics processes to create efficient and sustainable operations.
             </p>
@@ -21,25 +29,25 @@ export default function Home() {
                 href="https://linkedin.com/in/elif-yavuz-579b811b4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 bg-[#d4a574] text-white rounded-full font-medium hover:bg-[#c49563] transition-colors shadow-md"
+                className="px-8 py-3 bg-[#d4a574] text-white rounded-full font-medium hover:bg-[#c49563] hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl"
               >
                 View LinkedIn
               </a>
               <a
                 href="#contact"
-                className="px-8 py-3 bg-white text-[#d4a574] rounded-full font-medium hover:bg-[#f5f5f5] transition-colors shadow-md border border-[#e8d5c4]"
+                className="px-8 py-3 bg-white text-[#d4a574] rounded-full font-medium hover:bg-[#f5f5f5] hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl border border-[#e8d5c4]"
               >
                 Contact Me
               </a>
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="relative w-80 h-80 md:w-96 md:h-96">
+          <div className="flex justify-center animate-fade-in-right">
+            <div className="relative w-80 h-80 md:w-96 md:h-96 group">
               <Image
                 src="/porfolio-photo.jpeg"
                 alt="Elif Yavuz"
                 fill
-                className="rounded-3xl object-cover shadow-2xl"
+                className="rounded-3xl object-cover shadow-2xl group-hover:scale-105 transition-transform duration-500"
                 priority
               />
             </div>
@@ -50,8 +58,8 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-8 text-center">About Me</h2>
-          <div className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg">
+          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-8 text-center animate-fade-in">About Me</h2>
+          <div className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
             <p className="text-lg text-[#5a5a5a] leading-relaxed">
               I am a Logistics Specialist with hands-on experience in operational logistics, process optimization, and cost-conscious workflow management. Throughout my career, I have worked closely with cross-functional teams to improve operational efficiency, streamline logistics processes, and support data-driven decision-making. With a strong background in logistics operations and supply chain analysis, I enjoy transforming complex workflows into clear, efficient, and sustainable systems.
             </p>
@@ -62,10 +70,10 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="py-20 px-6 bg-[#faf8f6]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center">Experience</h2>
+          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center animate-fade-in">Experience</h2>
           <div className="space-y-8">
             {/* MR DIY Turkey - Logistics Specialist */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Logistics Specialist</h3>
@@ -98,7 +106,7 @@ export default function Home() {
             </div>
 
             {/* MR DIY Turkey - Assistant Specialist */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Logistic Assistant Specialist</h3>
@@ -131,7 +139,7 @@ export default function Home() {
             </div>
 
             {/* SIO Automotive - Management Intern */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Management Intern</h3>
@@ -156,7 +164,7 @@ export default function Home() {
             </div>
 
             {/* SIO Automotive - Production Intern */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Production Intern</h3>
@@ -181,7 +189,7 @@ export default function Home() {
             </div>
 
             {/* HASIR Group */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Management Internship (Erasmus)</h3>
@@ -206,7 +214,7 @@ export default function Home() {
             </div>
 
             {/* Titanic Hotels */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Management Internship (Erasmus)</h3>
@@ -231,7 +239,7 @@ export default function Home() {
             </div>
 
             {/* PNL LED Lighting Systems */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Supply Chain Analyst</h3>
@@ -265,31 +273,21 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center">Skills</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#faf8f6] rounded-3xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-[#d4a574] mb-6">Technical Skills</h3>
-              <div className="space-y-3">
-                <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm">
-                  Microsoft Excel
-                </div>
-                <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm">
-                  Process Analysis
-                </div>
-                <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm">
-                  Operational Planning
-                </div>
-                <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm">
-                  Reporting & Data Tracking
-                </div>
+          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center animate-fade-in">Skills</h2>
+          <div className="bg-[#faf8f6] rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
+            <h3 className="text-2xl font-bold text-[#d4a574] mb-6 text-center">Technical Skills</h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+                Microsoft Excel
               </div>
-            </div>
-            <div className="bg-[#faf8f6] rounded-3xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-[#d4a574] mb-6">Soft Skills</h3>
-              <div className="space-y-3">
-                <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm">
-                  Time Management
-                </div>
+              <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+                Process Analysis
+              </div>
+              <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+                Operational Planning
+              </div>
+              <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+                Reporting & Data Tracking
               </div>
             </div>
           </div>
@@ -299,16 +297,16 @@ export default function Home() {
       {/* Education Section */}
       <section id="education" className="py-20 px-6 bg-[#faf8f6]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center">Education</h2>
+          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center animate-fade-in">Education</h2>
           <div className="space-y-8">
-            <div className="bg-white rounded-3xl p-8 shadow-lg">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-right">
               <h3 className="text-2xl font-bold text-[#2d2d2d] mb-2">BSc in Industrial Engineering</h3>
               <p className="text-[#d4a574] font-semibold text-lg mb-4">Süleyman Demirel University</p>
               <p className="text-[#5a5a5a]">
                 Strong foundation in operations, systems, and process optimization
               </p>
             </div>
-            <div className="bg-white rounded-3xl p-8 shadow-lg">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-right">
               <h3 className="text-2xl font-bold text-[#2d2d2d] mb-2">Erasmus Internships</h3>
               <p className="text-[#d4a574] font-semibold text-lg mb-4">Berlin, Germany</p>
               <ul className="space-y-2 text-[#5a5a5a]">
@@ -333,29 +331,25 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center">Contact</h2>
-          <div className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg">
+          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center animate-fade-in">Contact</h2>
+          <div className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
             <div className="space-y-6">
-              <div>
+              <div className="hover:translate-x-2 transition-transform duration-300">
                 <h3 className="text-lg font-semibold text-[#d4a574] mb-2">Email</h3>
                 <a href="mailto:elifyavuz5x@gmail.com" className="text-[#2d2d2d] text-xl hover:text-[#d4a574] transition-colors">
                   elifyavuz5x@gmail.com
                 </a>
               </div>
-              <div>
+              <div className="hover:translate-x-2 transition-transform duration-300">
                 <h3 className="text-lg font-semibold text-[#d4a574] mb-2">LinkedIn</h3>
                 <a 
                   href="https://linkedin.com/in/elif-yavuz-579b811b4" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#2d2d2d] text-xl hover:text-[#d4a574] transition-colors"
+                  className="text-[#2d2d2d] text-xl hover:text-[#d4a574] transition-colors break-all"
                 >
                   linkedin.com/in/elif-yavuz-579b811b4
                 </a>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#d4a574] mb-2">Birthday</h3>
-                <p className="text-[#2d2d2d] text-xl">15 February 2001</p>
               </div>
             </div>
           </div>
