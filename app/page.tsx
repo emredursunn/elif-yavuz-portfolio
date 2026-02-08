@@ -1,4 +1,38 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const fadeInLeft = {
+  initial: { opacity: 0, x: -60 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const fadeInRight = {
+  initial: { opacity: 0, x: 60 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  initial: {},
+  whileInView: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  },
+  viewport: { once: true, margin: "-100px" }
+};
 
 export default function Home() {
   return (
@@ -6,7 +40,12 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-6xl w-full mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-center md:text-left animate-fade-in-up">
+          <motion.div 
+            className="space-y-6 text-center md:text-left"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h1 className="text-5xl md:text-6xl font-bold text-[#2d2d2d] leading-tight">
               Elif Yavuz
             </h1>
@@ -40,8 +79,13 @@ export default function Home() {
                 Contact Me
               </a>
             </div>
-          </div>
-          <div className="flex justify-center animate-fade-in-right">
+          </motion.div>
+          <motion.div 
+            className="flex justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          >
             <div className="relative w-80 h-80 md:w-96 md:h-96 group">
               <Image
                 src="/porfolio-photo.jpeg"
@@ -51,29 +95,52 @@ export default function Home() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* About Section */}
       <section id="about" className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-8 text-center animate-fade-in">About Me</h2>
-          <div className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
+          <motion.h2 
+            className="text-4xl font-bold text-[#2d2d2d] mb-8 text-center"
+            {...fadeInUp}
+          >
+            About Me
+          </motion.h2>
+          <motion.div 
+            className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500"
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <p className="text-lg text-[#5a5a5a] leading-relaxed">
               I am a Logistics Specialist with hands-on experience in operational logistics, process optimization, and cost-conscious workflow management. Throughout my career, I have worked closely with cross-functional teams to improve operational efficiency, streamline logistics processes, and support data-driven decision-making. With a strong background in logistics operations and supply chain analysis, I enjoy transforming complex workflows into clear, efficient, and sustainable systems.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Experience Section */}
       <section id="experience" className="py-20 px-6 bg-[#faf8f6]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center animate-fade-in">Experience</h2>
-          <div className="space-y-8">
+          <motion.h2 
+            className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center"
+            {...fadeInUp}
+          >
+            Experience
+          </motion.h2>
+          <motion.div 
+            className="space-y-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {/* MR DIY Turkey - Logistics Specialist */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInLeft}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Logistics Specialist</h3>
@@ -106,7 +173,10 @@ export default function Home() {
             </div>
 
             {/* MR DIY Turkey - Assistant Specialist */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInLeft}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Logistic Assistant Specialist</h3>
@@ -136,10 +206,13 @@ export default function Home() {
                   <span>Collaborating with internal teams to ensure smooth operations</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* SIO Automotive - Management Intern */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInLeft}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Management Intern</h3>
@@ -161,10 +234,13 @@ export default function Home() {
                   <span>Cross-departmental coordination support</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* SIO Automotive - Production Intern */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInLeft}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Production Intern</h3>
@@ -186,10 +262,13 @@ export default function Home() {
                   <span>Assisting process improvement initiatives</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* HASIR Group */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInLeft}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Management Internship (Erasmus)</h3>
@@ -211,10 +290,13 @@ export default function Home() {
                   <span>Gaining international business experience</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* Titanic Hotels */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInLeft}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Management Internship (Erasmus)</h3>
@@ -236,10 +318,13 @@ export default function Home() {
                   <span>Active role in an English-speaking work environment</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* PNL LED Lighting Systems */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-left">
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInLeft}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-[#2d2d2d]">Supply Chain Analyst</h3>
@@ -265,48 +350,92 @@ export default function Home() {
                   <span>Full-time work during the pandemic period</span>
                 </li>
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Skills Section */}
       <section id="skills" className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center animate-fade-in">Skills</h2>
-          <div className="bg-[#faf8f6] rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
+          <motion.h2 
+            className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center"
+            {...fadeInUp}
+          >
+            Skills
+          </motion.h2>
+          <motion.div 
+            className="bg-[#faf8f6] rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h3 className="text-2xl font-bold text-[#d4a574] mb-6 text-center">Technical Skills</h3>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+            <motion.div 
+              className="grid sm:grid-cols-2 gap-4"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
+            >
+              <motion.div 
+                className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                variants={fadeInUp}
+              >
                 Microsoft Excel
-              </div>
-              <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+              </motion.div>
+              <motion.div 
+                className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                variants={fadeInUp}
+              >
                 Process Analysis
-              </div>
-              <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+              </motion.div>
+              <motion.div 
+                className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                variants={fadeInUp}
+              >
                 Operational Planning
-              </div>
-              <div className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
+              </motion.div>
+              <motion.div 
+                className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
+                variants={fadeInUp}
+              >
                 Reporting & Data Tracking
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Education Section */}
       <section id="education" className="py-20 px-6 bg-[#faf8f6]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center animate-fade-in">Education</h2>
-          <div className="space-y-8">
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-right">
+          <motion.h2 
+            className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center"
+            {...fadeInUp}
+          >
+            Education
+          </motion.h2>
+          <motion.div 
+            className="space-y-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInRight}
+            >
               <h3 className="text-2xl font-bold text-[#2d2d2d] mb-2">BSc in Industrial Engineering</h3>
               <p className="text-[#d4a574] font-semibold text-lg mb-4">Süleyman Demirel University</p>
               <p className="text-[#5a5a5a]">
                 Strong foundation in operations, systems, and process optimization
               </p>
-            </div>
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-slide-in-right">
+            </motion.div>
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              variants={fadeInRight}
+            >
               <h3 className="text-2xl font-bold text-[#2d2d2d] mb-2">Erasmus Internships</h3>
               <p className="text-[#d4a574] font-semibold text-lg mb-4">Berlin, Germany</p>
               <ul className="space-y-2 text-[#5a5a5a]">
@@ -323,24 +452,45 @@ export default function Home() {
                   <span>Professional working environment in English</span>
                 </li>
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center animate-fade-in">Contact</h2>
-          <div className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
+          <motion.h2 
+            className="text-4xl font-bold text-[#2d2d2d] mb-12 text-center"
+            {...fadeInUp}
+          >
+            Contact
+          </motion.h2>
+          <motion.div 
+            className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500"
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="space-y-6">
-              <div className="hover:translate-x-2 transition-transform duration-300">
+              <motion.div 
+                className="hover:translate-x-2 transition-transform duration-300"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 <h3 className="text-lg font-semibold text-[#d4a574] mb-2">Email</h3>
                 <a href="mailto:elifyavuz5x@gmail.com" className="text-[#2d2d2d] text-xl hover:text-[#d4a574] transition-colors">
                   elifyavuz5x@gmail.com
                 </a>
-              </div>
-              <div className="hover:translate-x-2 transition-transform duration-300">
+              </motion.div>
+              <motion.div 
+                className="hover:translate-x-2 transition-transform duration-300"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
                 <h3 className="text-lg font-semibold text-[#d4a574] mb-2">LinkedIn</h3>
                 <a 
                   href="https://linkedin.com/in/elif-yavuz-579b811b4" 
@@ -350,9 +500,9 @@ export default function Home() {
                 >
                   linkedin.com/in/elif-yavuz-579b811b4
                 </a>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
