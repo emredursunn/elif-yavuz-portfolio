@@ -3,35 +3,23 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// Tek tip, tutarlı animasyon - daha düzenli ve sade
 const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
+  initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" as const }
-};
-
-const fadeInLeft = {
-  initial: { opacity: 0, x: -60 },
-  whileInView: { opacity: 1, x: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" as const }
-};
-
-const fadeInRight = {
-  initial: { opacity: 0, x: 60 },
-  whileInView: { opacity: 1, x: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" as const }
+  viewport: { once: true, margin: "-50px" },
+  transition: { duration: 0.5, ease: "easeOut" as const }
 };
 
 const staggerContainer = {
   initial: {},
   whileInView: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.08,
+      delayChildren: 0.05
     }
   },
-  viewport: { once: true, margin: "-100px" }
+  viewport: { once: true, margin: "-50px" }
 };
 
 export default function Home() {
@@ -42,9 +30,9 @@ export default function Home() {
         <div className="max-w-6xl w-full mx-auto grid md:grid-cols-2 gap-12 items-center">
           <motion.div 
             className="space-y-6 text-center md:text-left"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" as const }}
+            transition={{ duration: 0.6, ease: "easeOut" as const }}
           >
             <h1 className="text-5xl md:text-6xl font-bold text-[#2d2d2d] leading-tight">
               Elif Yavuz
@@ -82,9 +70,9 @@ export default function Home() {
           </motion.div>
           <motion.div 
             className="flex justify-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" as const, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" as const, delay: 0.1 }}
           >
             <div className="relative w-80 h-80 md:w-96 md:h-96 group">
               <Image
@@ -111,7 +99,7 @@ export default function Home() {
           <motion.div 
             className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500"
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
           >
             <p className="text-lg text-[#5a5a5a] leading-relaxed">
               I am a Logistics Specialist with hands-on experience in operational logistics, process optimization, and cost-conscious workflow management. Throughout my career, I have worked closely with cross-functional teams to improve operational efficiency, streamline logistics processes, and support data-driven decision-making. With a strong background in logistics operations and supply chain analysis, I enjoy transforming complex workflows into clear, efficient, and sustainable systems.
@@ -134,12 +122,12 @@ export default function Home() {
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-50px" }}
           >
             {/* MR DIY Turkey - Logistics Specialist */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInLeft}
+              variants={fadeInUp}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -175,7 +163,7 @@ export default function Home() {
             {/* MR DIY Turkey - Assistant Specialist */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInLeft}
+              variants={fadeInUp}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -211,7 +199,7 @@ export default function Home() {
             {/* SIO Automotive - Management Intern */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInLeft}
+              variants={fadeInUp}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -239,7 +227,7 @@ export default function Home() {
             {/* SIO Automotive - Production Intern */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInLeft}
+              variants={fadeInUp}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -267,7 +255,7 @@ export default function Home() {
             {/* HASIR Group */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInLeft}
+              variants={fadeInUp}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -295,7 +283,7 @@ export default function Home() {
             {/* Titanic Hotels */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInLeft}
+              variants={fadeInUp}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -323,7 +311,7 @@ export default function Home() {
             {/* PNL LED Lighting Systems */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInLeft}
+              variants={fadeInUp}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
@@ -367,7 +355,7 @@ export default function Home() {
           <motion.div 
             className="bg-[#faf8f6] rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
           >
             <h3 className="text-2xl font-bold text-[#d4a574] mb-6 text-center">Technical Skills</h3>
             <motion.div 
@@ -375,7 +363,7 @@ export default function Home() {
               variants={staggerContainer}
               initial="initial"
               whileInView="whileInView"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
             >
               <motion.div 
                 className="bg-white rounded-full px-6 py-3 text-[#2d2d2d] font-medium shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
@@ -420,11 +408,11 @@ export default function Home() {
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-50px" }}
           >
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInRight}
+              variants={fadeInUp}
             >
               <h3 className="text-2xl font-bold text-[#2d2d2d] mb-2">BSc in Industrial Engineering</h3>
               <p className="text-[#d4a574] font-semibold text-lg mb-4">Süleyman Demirel University</p>
@@ -434,7 +422,7 @@ export default function Home() {
             </motion.div>
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
-              variants={fadeInRight}
+              variants={fadeInUp}
             >
               <h3 className="text-2xl font-bold text-[#2d2d2d] mb-2">Erasmus Internships</h3>
               <p className="text-[#d4a574] font-semibold text-lg mb-4">Berlin, Germany</p>
@@ -469,15 +457,18 @@ export default function Home() {
           <motion.div 
             className="bg-[#faf8f6] rounded-3xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-500"
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
           >
-            <div className="space-y-6">
+            <motion.div 
+              className="space-y-6"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true, margin: "-50px" }}
+            >
               <motion.div 
                 className="hover:translate-x-2 transition-transform duration-300"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                variants={fadeInUp}
               >
                 <h3 className="text-lg font-semibold text-[#d4a574] mb-2">Email</h3>
                 <a href="mailto:elifyavuz5x@gmail.com" className="text-[#2d2d2d] text-xl hover:text-[#d4a574] transition-colors">
@@ -486,10 +477,7 @@ export default function Home() {
               </motion.div>
               <motion.div 
                 className="hover:translate-x-2 transition-transform duration-300"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                variants={fadeInUp}
               >
                 <h3 className="text-lg font-semibold text-[#d4a574] mb-2">LinkedIn</h3>
                 <a 
@@ -501,7 +489,7 @@ export default function Home() {
                   linkedin.com/in/elif-yavuz-579b811b4
                 </a>
               </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
