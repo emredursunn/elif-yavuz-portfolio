@@ -7,21 +7,21 @@ const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" }
+  transition: { duration: 0.6, ease: "easeOut" as const }
 };
 
 const fadeInLeft = {
   initial: { opacity: 0, x: -60 },
   whileInView: { opacity: 1, x: 0 },
   viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" }
+  transition: { duration: 0.6, ease: "easeOut" as const }
 };
 
 const fadeInRight = {
   initial: { opacity: 0, x: 60 },
   whileInView: { opacity: 1, x: 0 },
   viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" }
+  transition: { duration: 0.6, ease: "easeOut" as const }
 };
 
 const staggerContainer = {
@@ -44,7 +44,7 @@ export default function Home() {
             className="space-y-6 text-center md:text-left"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" as const }}
           >
             <h1 className="text-5xl md:text-6xl font-bold text-[#2d2d2d] leading-tight">
               Elif Yavuz
@@ -84,7 +84,7 @@ export default function Home() {
             className="flex justify-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" as const, delay: 0.2 }}
           >
             <div className="relative w-80 h-80 md:w-96 md:h-96 group">
               <Image
